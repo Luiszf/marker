@@ -1,10 +1,12 @@
 package com.luis.biscoin.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.Date;
 
 @Entity
+@Data
 @Table(name = "post")
 public class Post {
 
