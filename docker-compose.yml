@@ -20,14 +20,14 @@ services:
     restart: always
     ports:
       - 8089:8080
-  backend:
-    build: .
-    networks:
-     - backend
-    environment:
-     - DB_SERVER=biscoin-db
-    ports:
-     - 8000:8080
+      #  backend:
+      #   build: .
+      #  networks:
+      #  - backend
+      #environment:
+      # - DB_SERVER=biscoin-db
+      #ports:
+      # - 8000:8080
 networks:
   backend:
     name: backend

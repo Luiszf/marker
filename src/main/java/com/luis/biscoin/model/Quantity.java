@@ -5,17 +5,16 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "quantities")
+@Table(name = "quantity")
 public class Quantity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long quantityId;
 
-    private int quantity;
-
-    @ManyToOne
-    private Product product;
+    private int productQuantity;
 
     private int price;
+
+    private int quantity;
 }
