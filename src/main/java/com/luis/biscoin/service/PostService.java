@@ -1,7 +1,7 @@
 package com.luis.biscoin.service;
 
 import com.luis.biscoin.model.Post;
-import com.luis.biscoin.repository.postRepository;
+import com.luis.biscoin.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ import java.util.Optional;
 public class PostService {
 
     @Autowired
-    private postRepository repository;
+    private PostRepository repository;
 
     public Post save(Post post){
         return repository.save(post);

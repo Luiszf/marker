@@ -12,7 +12,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/quantity")
 public class QuantityController {
-
     @Autowired
     QuantityService service;
 

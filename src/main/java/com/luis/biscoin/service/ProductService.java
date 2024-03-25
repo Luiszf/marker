@@ -1,7 +1,7 @@
 package com.luis.biscoin.service;
 
 import com.luis.biscoin.model.Product;
-import com.luis.biscoin.repository.productRepository;
+import com.luis.biscoin.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.Optional;
 public class ProductService {
 
     @Autowired
-    productRepository repository;
+    ProductRepository repository;
 
     public Optional<Product> findProductById(long id){
         return repository.findById(id);
