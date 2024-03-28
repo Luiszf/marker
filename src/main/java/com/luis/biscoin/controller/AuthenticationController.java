@@ -52,7 +52,9 @@ public class AuthenticationController {
         this.userRepository.save(newUser);
 
         var token = tokenService.generateToken(newUser);
-        return ResponseEntity.status(HttpStatus.CREATED).body(token);
+        return ResponseEntity.status(HttpStatus.CREATED).body(
+                "{\"token\":" + token + "}"
+        );
     }
 
 }
