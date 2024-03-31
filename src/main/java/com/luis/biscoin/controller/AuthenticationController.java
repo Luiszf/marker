@@ -1,8 +1,10 @@
 package com.luis.biscoin.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.luis.biscoin.model.User;
 import com.luis.biscoin.repository.UserRepository;
 import com.luis.biscoin.service.TokenService;
+import org.hibernate.type.format.jackson.JacksonJsonFormatMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/auth")
+@CrossOrigin(origins = "http://localhost:4321")
 public class AuthenticationController {
 
     @Autowired
@@ -35,7 +38,10 @@ public class AuthenticationController {
         User userAuth = (User) auth.getPrincipal();
         var token = tokenService.generateToken(userAuth);
 
-        return ResponseEntity.status(HttpStatus.OK).body(token);
+        var json = "{\"token\": \"" + token + "\"}";
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("content-type", "application/json")
+                .body(json);
     }
 
 
