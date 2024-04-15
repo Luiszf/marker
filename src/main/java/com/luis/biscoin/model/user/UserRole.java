@@ -1,4 +1,4 @@
-package com.luis.biscoin.model;
+package com.luis.biscoin.model.user;
 
 public enum UserRole {
     PAGEADMIN("pageadmin"),

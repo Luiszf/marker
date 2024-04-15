@@ -1,10 +1,8 @@
 package com.luis.biscoin.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.luis.biscoin.model.User;
+import com.luis.biscoin.model.user.User;
 import com.luis.biscoin.repository.UserRepository;
 import com.luis.biscoin.service.TokenService;
-import org.hibernate.type.format.jackson.JacksonJsonFormatMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.luis.biscoin.model;
+package com.luis.biscoin.model.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
