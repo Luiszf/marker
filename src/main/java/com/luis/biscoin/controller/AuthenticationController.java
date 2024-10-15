@@ -3,6 +3,7 @@ package com.luis.biscoin.controller;
 import com.luis.biscoin.model.user.User;
 import com.luis.biscoin.repository.UserRepository;
 import com.luis.biscoin.service.TokenService;
+import jakarta.persistence.PostUpdate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/auth")
-@CrossOrigin(origins = "http://localhost:4321")
 public class AuthenticationController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class AuthenticationController {
     UserRepository userRepository;
 
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody User user) {
+    public ResponseEntity<String> login(@RequestBody User user) {
         UsernamePasswordAuthenticationToken userCredential=
                 new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword());
 
@@ -42,9 +42,8 @@ public class AuthenticationController {
                 .body(json);
     }
 
-
     @PostMapping("/register")
-    public ResponseEntity register(@RequestBody User user){
+    public ResponseEntity<String> register(@RequestBody User user){
         if (this.userRepository.findByUsername(user.getUsername()) != null){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\": \"user already exists\" }");
         }
@@ -57,7 +56,7 @@ public class AuthenticationController {
 
         var token = tokenService.generateToken(newUser);
         return ResponseEntity.status(HttpStatus.CREATED).body(
-                "{\"token\":" + token + "}"
+                "{\"token\":\"" + token + "\"}"
         );
     }
 

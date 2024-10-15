@@ -1,7 +1,7 @@
 services:
   db:
     image: postgres:16.2-alpine3.19
-    container_name: biscoin-db
+    container_name: marker-db
     networks: 
      - backend
     restart: always
@@ -13,21 +13,12 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
       POSTGRES_DB: postgres
-  adminer:
-    image: adminer 
-    networks: 
-     - backend
-    restart: always
+  backend:
+    build: .
+    networks:
+      - backend
     ports:
-      - 8089:8080
-      #  backend:
-      #   build: .
-      #  networks:
-      #  - backend
-      #environment:
-      # - DB_SERVER=biscoin-db
-      #ports:
-      # - 8000:8080
+       - 8079:8080
 networks:
   backend:
     name: backend

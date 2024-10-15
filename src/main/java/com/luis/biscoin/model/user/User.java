@@ -1,5 +1,6 @@
 package com.luis.biscoin.model.user;
 
+import com.luis.biscoin.model.ImageData;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -26,9 +27,21 @@ public class User implements UserDetails {
     UUID id;
 
     String username;
+
     String password;
 
     UserRole userRole;
+
+    @Lob
+    private byte[] image;
+
+    String phoneNumber;
+
+    String address;
+
+    Float lat;
+
+    Float lng;
 
     public User(String username, String password, UserRole userRole) {
         this.username = username;
