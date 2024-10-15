@@ -1,0 +1,16 @@
+{
+	"title": "small title",
+	"description": "small description",
+		"quantities": [
+		{
+			"productQuantity": 2,
+			"quantity":  1,
+			"price": 2000
+		},
+		{
+			"productQuantity": 3,
+			"quantity":  100,
+			"price": 2700
+		}
+	]
+}

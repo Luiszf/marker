@@ -1,0 +1,23 @@
+{
+	"title": "very large title just to test",
+	"description": "very large description just to test how the ui deal with such large descriptions that problably someone will make",
+	"quantities": [
+		{
+			"productQuantity": 2,
+			"quantity":  1,
+			"price": 2000
+		},{
+			"productQuantity": 3,
+			"quantity":  100,
+			"price": 2700
+		},{
+			"productQuantity": 3,
+			"quantity":  100,
+			"price": 2700
+		},
+		{
+			"productQuantity": 3,
+			"quantity":  100,
+			"price": 2700
+		}]
+}
